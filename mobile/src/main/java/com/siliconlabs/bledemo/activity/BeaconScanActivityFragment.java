@@ -27,20 +27,20 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 public class BeaconScanActivityFragment extends Fragment implements Discovery.BluetoothDiscoveryHost, Discovery.DeviceContainer {
-    @InjectView(R.id.beacon_scan_radar)
+    @BindView(R.id.beacon_scan_radar)
     ImageView radarImage;
-    @InjectView(R.id.beacon_scan_overlay)
+    @BindView(R.id.beacon_scan_overlay)
     View scanOverlay;
-    @InjectView(R.id.beacon_header_text)
+    @BindView(R.id.beacon_header_text)
     TextView headerText;
-    @InjectView(R.id.beacon_name_text)
+    @BindView(R.id.beacon_name_text)
     TextView nameText;
-    @InjectView(R.id.beacon_comment_text)
+    @BindView(R.id.beacon_comment_text)
     TextView commentText;
-    @InjectView(R.id.beacon_debug_text)
+    @BindView(R.id.beacon_debug_text)
     TextView debugText;
 
     private AtomicLong noneFoundTimestamp = new AtomicLong(-1);
@@ -132,7 +132,7 @@ public class BeaconScanActivityFragment extends Fragment implements Discovery.Bl
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_beacon_scan, container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         radarImage.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.beacon_scan_anim));
         return view;
     }

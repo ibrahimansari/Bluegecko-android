@@ -28,7 +28,7 @@ import java.lang.reflect.Method;
 import java.util.Set;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 
 public class DebugModeDeviceAdapter extends ScannedDevicesAdapter<BluetoothDeviceInfo> {
@@ -42,25 +42,25 @@ public class DebugModeDeviceAdapter extends ScannedDevicesAdapter<BluetoothDevic
     }
 
     public static class ViewHolder extends DeviceInfoViewHolder<BluetoothDeviceInfo> {
-        @InjectView(R.id.devices_header_label)
+        @BindView(R.id.devices_header_label)
         TextView headerLabel;
-        @InjectView(R.id.card_view)
+        @BindView(R.id.card_view)
         CardView cardView;
-        @InjectView(R.id.device_info_container)
+        @BindView(R.id.device_info_container)
         LinearLayout deviceInfoContainer;
-        @InjectView(R.id.device_name)
+        @BindView(R.id.device_name)
         TextView deviceName;
-        @InjectView(R.id.mac_address)
+        @BindView(R.id.mac_address)
         TextView deviceMacAddress;
-        @InjectView(R.id.rssi)
+        @BindView(R.id.rssi)
         TextView deviceRssi;
-        @InjectView(R.id.expanded_info_container)
+        @BindView(R.id.expanded_info_container)
         FlowLayout deviceExtraInfoContainer;
-        @InjectView(R.id.submenu_spinner)
+        @BindView(R.id.submenu_spinner)
         Spinner submenuSpinner;
-        @InjectView(R.id.connecting_spinner)
+        @BindView(R.id.connecting_spinner)
         ProgressBar connectingSpinner;
-        @InjectView(R.id.button_extrainfo)
+        @BindView(R.id.button_extrainfo)
         Button button_extrainfo;
 
         DebugModeCallback debugModeCallback;
@@ -85,7 +85,7 @@ public class DebugModeDeviceAdapter extends ScannedDevicesAdapter<BluetoothDevic
 
         public ViewHolder(final Context context, View view, final DebugModeCallback debugModeCallback) {
             super(view);
-            ButterKnife.inject(this, itemView);
+            ButterKnife.bind(this, itemView);
             this.context = context;
             this.debugModeCallback = debugModeCallback;
             submenuAdapter = new SubmenuSpinnerAdapter();

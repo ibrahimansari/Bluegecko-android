@@ -15,7 +15,7 @@ import android.widget.TextView;
 import com.siliconlabs.bledemo.R;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 public class ProgressDialogWithSpinner extends android.app.ProgressDialog {
     private int imageViewResourceId;
@@ -24,9 +24,9 @@ public class ProgressDialogWithSpinner extends android.app.ProgressDialog {
     private Animation rotateIconAnimation;
     private Handler handler;
 
-    @InjectView(R.id.progress_spinner)
+    @BindView(R.id.progress_spinner)
     ImageView icon;
-    @InjectView(R.id.dialog_text)
+    @BindView(R.id.dialog_text)
     TextView captionTextView;
 
     private final Runnable autoDismiss = new Runnable() {
@@ -63,7 +63,7 @@ public class ProgressDialogWithSpinner extends android.app.ProgressDialog {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dialog_with_progress_spinner);
-        ButterKnife.inject(this, this);
+        ButterKnife.bind(this, this);
         captionTextView.setText(caption);
         if (animate) {
             rotateIconAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.rotate_progress_dialog_spinner);

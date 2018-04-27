@@ -128,8 +128,7 @@ public class Common {
 
     // Checks if given property is set
     public static boolean isSetProperty(PropertyType property, int properties) {
-        boolean isSet = ((properties >> (property.ordinal())) & 1) != 0;
-        return isSet;
+        return ((properties >> (property.ordinal())) & 1) != 0;
     }
 
     // Checks if given bit is set
@@ -196,15 +195,13 @@ public class Common {
     // Reads float32 type
     public static float readFloat32(byte[] value, int start, int end) {
         byte[] bytes = Arrays.copyOfRange(value, start, end);
-        float result = ByteBuffer.wrap(bytes).order(ByteOrder.LITTLE_ENDIAN).getFloat();
-        return result;
+        return ByteBuffer.wrap(bytes).order(ByteOrder.LITTLE_ENDIAN).getFloat();
     }
 
     // Reads float64 type
     public static double readFloat64(byte[] value, int start, int end) {
         byte[] bytes = Arrays.copyOfRange(value, start, end);
-        double result = ByteBuffer.wrap(bytes).order(ByteOrder.LITTLE_ENDIAN).getDouble();
-        return result;
+        return ByteBuffer.wrap(bytes).order(ByteOrder.LITTLE_ENDIAN).getDouble();
     }
 
     // Returns UUID text in 16 bits version if it is standard Bluetooth UUID or

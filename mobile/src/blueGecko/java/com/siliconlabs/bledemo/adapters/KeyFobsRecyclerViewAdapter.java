@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Map;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.Optional;
 
 public class KeyFobsRecyclerViewAdapter extends RecyclerView.Adapter<KeyFobsRecyclerViewAdapter.CustomViewHolder> implements Discovery.DeviceContainer {
@@ -313,36 +313,35 @@ public class KeyFobsRecyclerViewAdapter extends RecyclerView.Adapter<KeyFobsRecy
         BluetoothDeviceInfo btInfo = null;
         Context context = null;
 
-        @Optional
-        @InjectView(R.id.card_view)
+        @BindView(R.id.card_view)
         LinearLayout cardView;
 
-        @InjectView(R.id.list_item_outermost_container)
+        @BindView(R.id.list_item_outermost_container)
         LinearLayout container;
 
-        @InjectView(R.id.list_item_entry_container)
+        @BindView(R.id.list_item_entry_container)
         LinearLayout deviceContainer;
-        @InjectView(R.id.signal_strength_graphic)
+        @BindView(R.id.signal_strength_graphic)
         KeyFobSignalStrength signalStrengthIcon;
-        @InjectView(R.id.device_id_label)
+        @BindView(R.id.device_id_label)
         TextView deviceName;
-        @InjectView(R.id.signal_strength_label)
+        @BindView(R.id.signal_strength_label)
         TextView signalStrengthText;
-        @InjectView(R.id.find_btn)
+        @BindView(R.id.find_btn)
         TextView findButton;
-        @InjectView(R.id.list_item_entry_dividers)
+        @BindView(R.id.list_item_entry_dividers)
         View itemDividerBelow;
 
-        @InjectView(R.id.list_item_header_container)
+        @BindView(R.id.list_item_header_container)
         LinearLayout headerContainer;
-        @InjectView(R.id.header_text)
+        @BindView(R.id.header_text)
         TextView headerText;
-        @InjectView(R.id.header_divider_above)
+        @BindView(R.id.header_divider_above)
         View headerDividerAbove;
 
         public CustomViewHolder(View view, Context context) {
             super(view);
-            ButterKnife.inject(this, itemView);
+            ButterKnife.bind(this, itemView);
             this.context = context;
         }
 

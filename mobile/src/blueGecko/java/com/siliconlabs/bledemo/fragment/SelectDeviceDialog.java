@@ -41,7 +41,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import butterknife.Optional;
 
@@ -75,21 +75,19 @@ public class SelectDeviceDialog extends DialogFragment implements Discovery.Blue
         return dialog;
     }
 
-    @InjectView(android.R.id.title)
+    @BindView(android.R.id.title)
     TextView titleView;
-    @InjectView(R.id.blue_gecko_tab)
+    @BindView(R.id.blue_gecko_tab)
     TextView blueGeckoTab;
-    @InjectView(R.id.other_tab)
+    @BindView(R.id.other_tab)
     TextView otherTab;
 
-    @InjectView(android.R.id.list)
+    @BindView(android.R.id.list)
     RecyclerView listView;
 
-    @Optional
-    @InjectView(android.R.id.text1)
+    @BindView(android.R.id.text1)
     TextView descriptionView;
-    @Optional
-    @InjectView(R.id.profiles_used)
+    @BindView(R.id.profiles_used)
     ViewGroup profilesUsed;
 
     private GridLayoutManager layout;
@@ -183,7 +181,7 @@ public class SelectDeviceDialog extends DialogFragment implements Discovery.Blue
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.dialog_select_device, container, false);
 
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
 
         listView.setLayoutManager(layout);
         listView.addItemDecoration(itemDecoration);
@@ -371,16 +369,16 @@ public class SelectDeviceDialog extends DialogFragment implements Discovery.Blue
     }
 
     public static class ViewHolder extends DeviceInfoViewHolder {
-        @InjectView(android.R.id.icon)
+        @BindView(android.R.id.icon)
         ImageView icon;
-        @InjectView(android.R.id.title)
+        @BindView(android.R.id.title)
         TextView title;
 
         BluetoothDeviceInfo btInfo;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.inject(this, itemView);
+            ButterKnife.bind(this, itemView);
         }
 
         @Override

@@ -111,7 +111,7 @@ import java.util.TimerTask;
 import java.util.UUID;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 public class DeviceServicesActivity extends AppCompatActivity {
     public static final String ABOUT_DIALOG_HTML_ASSET_FILE_PATH = "file:///android_asset/about.html";
@@ -231,17 +231,17 @@ public class DeviceServicesActivity extends AppCompatActivity {
     FloatingActionButton previousCharacteristicFabButton = null;
     RelativeLayout previousCharacteristicFabButtonContainer = null;
 
-    @InjectView(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @InjectView(R.id.services_container)
+    @BindView(R.id.services_container)
     LinearLayout servicesContainer;
-    @InjectView(R.id.scrollViewWrapper)
+    @BindView(R.id.scrollViewWrapper)
     RelativeLayout scrollViewWrapper;
-    @InjectView(R.id.loading_container)
+    @BindView(R.id.loading_container)
     public RelativeLayout loadingContainer;
-    @InjectView(R.id.loading_anim_gradient_right_container)
+    @BindView(R.id.loading_anim_gradient_right_container)
     public LinearLayout loadingGradientContainer;
-    @InjectView(R.id.loading_bar_container)
+    @BindView(R.id.loading_bar_container)
     public RelativeLayout loadingBarContainer;
 
 
@@ -783,7 +783,7 @@ public class DeviceServicesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_device_services);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

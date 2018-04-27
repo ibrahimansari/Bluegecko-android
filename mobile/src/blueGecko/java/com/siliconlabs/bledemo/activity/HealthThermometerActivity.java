@@ -25,14 +25,14 @@ import java.util.Arrays;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 public class HealthThermometerActivity extends BaseActivity {
     private BlueToothService service;
     private boolean serviceHasBeenSet;
     private BlueToothService.Binding bluetoothBinding;
     private HealthThermometerActivityFragment healthThermometerActivityFragment;
-    @InjectView(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
 
     private final TimeoutGattCallback gattCallback = new TimeoutGattCallback() {
@@ -83,7 +83,7 @@ public class HealthThermometerActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_thermometer);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         healthThermometerActivityFragment = (HealthThermometerActivityFragment) getSupportFragmentManager().findFragmentById(R.id.fragment);

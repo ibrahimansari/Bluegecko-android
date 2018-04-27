@@ -18,7 +18,7 @@ import com.siliconlabs.bledemo.interfaces.FindKeyFobCallback;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 public class KeyFobsActivityFindingDeviceFragment extends Fragment {
     public static final int MIN_FADE_DURATION = 250; //in milliseconds
@@ -27,9 +27,9 @@ public class KeyFobsActivityFindingDeviceFragment extends Fragment {
     private Animation fadeIn;
     private Animation fadeOut;
 
-    @InjectView(R.id.led_bulb_rays)
+    @BindView(R.id.led_bulb_rays)
     ImageView ledRays;
-    @InjectView(R.id.finding_keyfob_device_name)
+    @BindView(R.id.finding_keyfob_device_name)
     TextView deviceNameText;
 
     @Override
@@ -47,7 +47,7 @@ public class KeyFobsActivityFindingDeviceFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_key_fobs_finding_device, container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         String deviceName = ((FindKeyFobCallback) getActivity()).getDeviceName();
         if (!TextUtils.isEmpty(deviceName)) {
             deviceNameText.setText(deviceName);

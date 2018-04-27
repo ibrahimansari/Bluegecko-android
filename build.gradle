@@ -8,13 +8,14 @@ buildscript {
         mavenCentral()
         maven { url 'https://jitpack.io' }
 
+        google()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
+        classpath 'com.android.tools.build:gradle:3.1.2'
+        classpath 'com.jakewharton:butterknife-gradle-plugin:8.8.1'
         //classpath 'com.jakewharton.sdkmanager:gradle-plugin:0.12' // HASN'T BEEN  UPDATED SEE SO: 33881984 COMMENT 33889117
-        classpath 'com.github.JakeWharton:sdk-manager-plugin:220bf7a88a7072df3ed16dc8466fb144f2817070'
+        //classpath 'com.github.JakeWharton:sdk-manager-plugin:220bf7a88a7072df3ed16dc8466fb144f2817070'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle file
     }
@@ -29,5 +30,6 @@ allprojects {
 
         jcenter()
 
+        google()
     }
 }

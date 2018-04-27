@@ -21,26 +21,26 @@ import com.siliconlabs.bledemo.fragment.FragmentCharacteristicDetail;
 import com.siliconlabs.bledemo.fragment.LogFragment;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 public class ServiceItemContainer extends LinearLayout {
     public int ANIMATION_DURATION_FOR_EXPAND_AND_COLLAPSE = 333;
 
-    @InjectView(R.id.service_info_card_view)
+    @BindView(R.id.service_info_card_view)
     public CardView serviceInfoCardView;
-    @InjectView(R.id.services_header_label)
+    @BindView(R.id.services_header_label)
     public TextView serviceHeaderLabel;
-    @InjectView(R.id.btn_expand_to_show_characteristics)
+    @BindView(R.id.btn_expand_to_show_characteristics)
     public Button btnExpandToShowCharacteristics;
-    @InjectView(R.id.service_expansion_caret)
+    @BindView(R.id.service_expansion_caret)
     public ImageView serviceExpansionCaret;
-    @InjectView(R.id.service_title)
+    @BindView(R.id.service_title)
     public TextView serviceTitleTextView;
-    @InjectView(R.id.sevice_uuid)
+    @BindView(R.id.sevice_uuid)
     public TextView serviceUuidTextView;
-    @InjectView(R.id.container_of_characteristics_for_service)
+    @BindView(R.id.container_of_characteristics_for_service)
     public LinearLayout groupOfCharacteristicsForService;
-    @InjectView(R.id.last_item_divider)
+    @BindView(R.id.last_item_divider)
     public LinearLayout lastItemDivider;
 
     public ServiceItemContainer(Context context) {
@@ -62,7 +62,7 @@ public class ServiceItemContainer extends LinearLayout {
         LayoutInflater inflater = LayoutInflater.from(context);
         inflater.inflate(R.layout.list_item_debug_mode_service, this);
 
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         btnExpandToShowCharacteristics.setOnClickListener(new View.OnClickListener() {
             @Override

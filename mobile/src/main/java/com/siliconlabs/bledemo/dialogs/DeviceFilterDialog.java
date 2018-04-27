@@ -18,30 +18,30 @@ import android.widget.TextView;
 import com.siliconlabs.bledemo.R;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 
 public class DeviceFilterDialog extends Dialog {
     @NonNull
     private final OnSubmitListener listener;
 
-    @InjectView(R.id.dialog_device_filter_root)
+    @BindView(R.id.dialog_device_filter_root)
     ViewGroup rootView;
-    @InjectView(R.id.dialog_device_filter_search_container)
+    @BindView(R.id.dialog_device_filter_search_container)
     ViewGroup nameSearchContainer;
-    @InjectView(R.id.dialog_device_filter_search_input)
+    @BindView(R.id.dialog_device_filter_search_input)
     SearchView nameSearchView;
-    @InjectView(R.id.dialog_device_filter_rssi_seekbar)
+    @BindView(R.id.dialog_device_filter_rssi_seekbar)
     SeekBar rssiSeekBar;
-    @InjectView(R.id.dialog_device_filter_rssi_value)
+    @BindView(R.id.dialog_device_filter_rssi_value)
     TextView rssiValueText;
-    @InjectView(R.id.dialog_device_filter_rssi_bottom_space)
+    @BindView(R.id.dialog_device_filter_rssi_bottom_space)
     View rssiBottomSpace;
-    @InjectView(R.id.dialog_device_filter_reset_button)
+    @BindView(R.id.dialog_device_filter_reset_button)
     View resetButton;
-    @InjectView(R.id.dialog_device_filter_apply_button)
+    @BindView(R.id.dialog_device_filter_apply_button)
     View applyButton;
-    @InjectView(R.id.dialog_device_filter_cancel_button)
+    @BindView(R.id.dialog_device_filter_cancel_button)
     View cancelButton;
 
     private boolean filterRssi;
@@ -66,7 +66,7 @@ public class DeviceFilterDialog extends Dialog {
     @Override
     protected void onStart() {
         super.onStart();
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         resetUi();
         rssiSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override

@@ -18,7 +18,7 @@ import com.siliconlabs.bledemo.ble.GattService;
 import com.siliconlabs.bledemo.interfaces.FindKeyFobCallback;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 public class KeyFobsActivityFragment extends Fragment implements Discovery.BluetoothDiscoveryHost {
     private KeyFobsRecyclerViewAdapter adapter;
@@ -26,7 +26,7 @@ public class KeyFobsActivityFragment extends Fragment implements Discovery.Bluet
     private RecyclerView.ItemDecoration itemDecoration;
     Discovery discovery;
 
-    @InjectView(R.id.recyclerview_keyfobs)
+    @BindView(R.id.recyclerview_keyfobs)
     RecyclerView recyclerView;
 
     @Override
@@ -42,7 +42,7 @@ public class KeyFobsActivityFragment extends Fragment implements Discovery.Bluet
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_key_fobs, container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
 
         //force this to 1 column
         layout = new GridLayoutManager(getActivity(), 1, LinearLayoutManager.VERTICAL, false);

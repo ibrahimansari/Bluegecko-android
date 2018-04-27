@@ -18,7 +18,8 @@ import com.siliconlabs.bledemo.interfaces.DemoPageLauncher;
 import java.util.Arrays;
 import java.util.List;
 
-import butterknife.InjectViews;
+import butterknife.BindView;
+import butterknife.BindViews;
 
 public class DemoItemProvider {
     static final SparseIntArray ICONS = new SparseIntArray();
@@ -87,7 +88,7 @@ public class DemoItemProvider {
         });
     }
 
-    @InjectViews({ R.id.demo_health_thermometer,
+    @BindViews({ R.id.demo_health_thermometer,
                    R.id.demo_retail_beacon,
                    R.id.demo_key_fobs,
                    R.id.blue_giga_debug })

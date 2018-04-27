@@ -41,18 +41,18 @@ import java.util.Date;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 
 public class BeaconScanActivity extends AppCompatActivity {
 
-    @InjectView(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @InjectView(R.id.bluetooth_enable)
+    @BindView(R.id.bluetooth_enable)
     RelativeLayout bluetoothEnableBar;
-    @InjectView(R.id.bluetooth_enable_msg)
+    @BindView(R.id.bluetooth_enable_msg)
     TextView bluetoothEnableMsg;
-    @InjectView(R.id.bluetooth_enable_btn)
+    @BindView(R.id.bluetooth_enable_btn)
     TextView bluetoothEnableBtn;
     private BeaconListFragment beaconListFragment;
     private BlueToothService.Binding bluetoothBinding;
@@ -100,7 +100,7 @@ public class BeaconScanActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beacon_scan);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

@@ -93,7 +93,7 @@ import java.util.Date;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class MainActivityDebugMode extends BaseActivity implements DebugModeCallback, SwipeRefreshLayout.OnRefreshListener, Discovery.BluetoothDiscoveryHost, Discovery.DeviceContainer {
@@ -173,41 +173,41 @@ public class MainActivityDebugMode extends BaseActivity implements DebugModeCall
         }
     };
 
-    @InjectView(R.id.bluetooth_enable)
+    @BindView(R.id.bluetooth_enable)
     RelativeLayout bluetoothEnableBar;
-    @InjectView(R.id.bluetooth_enable_msg)
+    @BindView(R.id.bluetooth_enable_msg)
     TextView bluetoothEnableMsg;
-    @InjectView(R.id.bluetooth_enable_btn)
+    @BindView(R.id.bluetooth_enable_btn)
     TextView bluetoothEnableBtn;
-    @InjectView(R.id.coordinator_layout)
+    @BindView(R.id.coordinator_layout)
     CoordinatorLayout coordinatorLayout;
-    @InjectView(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @InjectView(R.id.no_devices_found)
+    @BindView(R.id.no_devices_found)
     LinearLayout noDevicesFound;
-    @InjectView(R.id.looking_for_devices_background)
+    @BindView(R.id.looking_for_devices_background)
     LinearLayout lookingForDevicesBackgroundMessage;
-    @InjectView(R.id.scan_anim_gradient_left)
+    @BindView(R.id.scan_anim_gradient_left)
     RelativeLayout scanGradientLeft;
-    @InjectView(R.id.scan_anim_gradient_right)
+    @BindView(R.id.scan_anim_gradient_right)
     RelativeLayout scanGradientRight;
-    @InjectView(R.id.scanning_label_textview)
+    @BindView(R.id.scanning_label_textview)
     TextView scanningLabelTextView;
-    @InjectView(R.id.scanning_gradient_container)
+    @BindView(R.id.scanning_gradient_container)
     RelativeLayout scanningGradientContainer;
-    @InjectView(R.id.swipe_refresh_container)
+    @BindView(R.id.swipe_refresh_container)
     public SwipeRefreshLayout swipeRefreshLayout;
     StringBuilder subtraction = new StringBuilder();
-    @InjectView(R.id.connecting_container)
+    @BindView(R.id.connecting_container)
     public RelativeLayout connectingContainer;
-    @InjectView(R.id.connecting_anim_gradient_right_container)
+    @BindView(R.id.connecting_anim_gradient_right_container)
     public LinearLayout connectingGradientContainer;
-    @InjectView(R.id.connecting_bar_container)
+    @BindView(R.id.connecting_bar_container)
     public RelativeLayout connectingBarContainer;
-    @InjectView(R.id.fab_btn_refresh)
+    @BindView(R.id.fab_btn_refresh)
     public FloatingActionButton fabBtnRefresh;
 
-    @InjectView(R.id.recyclerview_debug_devices)
+    @BindView(R.id.recyclerview_debug_devices)
     public RecyclerView devicesRecyclerView;
     TextView tv;
 
@@ -222,7 +222,7 @@ public class MainActivityDebugMode extends BaseActivity implements DebugModeCall
         super.onCreate(savedInstanceState);
         // prepare ui
         setContentView(R.layout.activity_main_debug_mode);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         // init bluetoooth discovery engine, matches to accepted bluetooth gatt profiles
         Engine.getInstance().init(this.getApplicationContext());

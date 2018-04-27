@@ -35,7 +35,7 @@ import com.siliconlabs.bledemo.utils.BLEUtils.Indications;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 public class KeyFobsActivity extends BaseActivity implements FindKeyFobCallback {
     public static final int MAX_EXPECTED_FOB_DELTA = 18;
@@ -67,18 +67,18 @@ public class KeyFobsActivity extends BaseActivity implements FindKeyFobCallback 
         NONE, MILD, HIGH
     }
 
-    @InjectView(R.id.toolbar)
+    @BindView(R.id.toolbar)
     android.support.v7.widget.Toolbar toolbar;
-    @InjectView(R.id.fragment_container)
+    @BindView(R.id.fragment_container)
     FrameLayout fragmentContainer;
-    @InjectView(R.id.foreground_veil)
+    @BindView(R.id.foreground_veil)
     View foregroundVeilConnectingDialog;
 
-    @InjectView(R.id.bluetooth_enable)
+    @BindView(R.id.bluetooth_enable)
     RelativeLayout bluetoothEnableBar;
-    @InjectView(R.id.bluetooth_enable_msg)
+    @BindView(R.id.bluetooth_enable_msg)
     TextView bluetoothEnableMsg;
-    @InjectView(R.id.bluetooth_enable_btn)
+    @BindView(R.id.bluetooth_enable_btn)
     TextView bluetoothEnableBtn;
 
     boolean isBluetoothAdapterEnabled = false;
@@ -275,7 +275,7 @@ public class KeyFobsActivity extends BaseActivity implements FindKeyFobCallback 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_key_fobs);
 
-        ButterKnife.inject(this, this);
+        ButterKnife.bind(this, this);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

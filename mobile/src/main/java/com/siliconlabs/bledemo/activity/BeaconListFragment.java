@@ -33,7 +33,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.Optional;
 
 public class BeaconListFragment extends Fragment implements Discovery.BluetoothDiscoveryHost, Discovery.DeviceContainer {
@@ -44,13 +44,13 @@ public class BeaconListFragment extends Fragment implements Discovery.BluetoothD
     private RecyclerView.ItemDecoration itemDecoration;
     private boolean scan = false;
 
-    @InjectView(android.R.id.list)
+    @BindView(android.R.id.list)
     RecyclerView listView;
-    @InjectView(R.id.beacon_scan_radar_bar)
+    @BindView(R.id.beacon_scan_radar_bar)
     LinearLayout radarBar;
-    @InjectView(R.id.beacon_scan_radar)
+    @BindView(R.id.beacon_scan_radar)
     ImageView radarImage;
-    @InjectView(R.id.beacon_radar_text)
+    @BindView(R.id.beacon_radar_text)
     TextView radarText;
 
     final BeaconScreenScannedDevicesAdapter adapter = new BeaconScreenScannedDevicesAdapter(new DeviceInfoViewHolder.Generator(
@@ -165,7 +165,7 @@ public class BeaconListFragment extends Fragment implements Discovery.BluetoothD
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_beacon_list, container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         listView.setLayoutManager(layout);
         listView.addItemDecoration(itemDecoration);
         listView.setHasFixedSize(true);
@@ -258,66 +258,63 @@ public class BeaconListFragment extends Fragment implements Discovery.BluetoothD
     }
 
     public static class ViewHolder extends DeviceInfoViewHolder {
-        @Optional
-        @InjectView(R.id.container)
+        @BindView(R.id.container)
         public RelativeLayout container;
-        @Optional
-        @InjectView(R.id.beacon_list_header_label)
+        @BindView(R.id.beacon_list_header_label)
         public TextView beaconListHeaderLabel;
-        @Optional
-        @InjectView(R.id.beacon_list_item_separator)
+        @BindView(R.id.beacon_list_item_separator)
         public View beaconListItemSeparator;
-        @InjectView(android.R.id.icon)
+        @BindView(android.R.id.icon)
         public ImageView icon;
-        @InjectView(android.R.id.title)
+        @BindView(android.R.id.title)
         public TextView title;
-        @InjectView(R.id.beacon_type_text)
+        @BindView(R.id.beacon_type_text)
         public TextView beaconType;
-        @InjectView(R.id.rssi_text)
+        @BindView(R.id.rssi_text)
         public TextView rssiText;
-        @InjectView(R.id.tx_text)
+        @BindView(R.id.tx_text)
         public TextView txText;
-        @InjectView(R.id.tx_text_label)
+        @BindView(R.id.tx_text_label)
         public TextView txLabel;
-        @InjectView(R.id.beacon_type_img)
+        @BindView(R.id.beacon_type_img)
         public ImageView typeIcon;
-        @InjectView(R.id.beacon_range_text)
+        @BindView(R.id.beacon_range_text)
         public TextView rangeText;
-        @InjectView(R.id.device_mac_address)
+        @BindView(R.id.device_mac_address)
         public TextView macAddress;
         // iBeacon and bluegecko
-        @InjectView(R.id.ibeacon_info_container)
+        @BindView(R.id.ibeacon_info_container)
         public LinearLayout iBeaconInfoContainer;
-        @InjectView(R.id.scan_info_uuid)
+        @BindView(R.id.scan_info_uuid)
         public TextView scanInfoUuid;
-        @InjectView(R.id.major_number)
+        @BindView(R.id.major_number)
         public TextView majorNumber;
-        @InjectView(R.id.minor_number)
+        @BindView(R.id.minor_number)
         public TextView minorNumber;
         // eddystone
-        @InjectView(R.id.eddystone_info_container)
+        @BindView(R.id.eddystone_info_container)
         public LinearLayout eddystoneInfoContainer;
-        @InjectView(R.id.eddystone_url)
+        @BindView(R.id.eddystone_url)
         public TextView eddystoneUrl;
-        @InjectView(R.id.eddystone_uid)
+        @BindView(R.id.eddystone_uid)
         public TextView eddystoneUid;
-        @InjectView(R.id.eddystone_tlm)
+        @BindView(R.id.eddystone_tlm)
         public TextView eddystoneTlm;
         // AltBeacon
-        @InjectView(R.id.alt_beacon_info_container)
+        @BindView(R.id.alt_beacon_info_container)
         public LinearLayout altBeaconInfoContainer;
-        @InjectView(R.id.alt_beacon_id)
+        @BindView(R.id.alt_beacon_id)
         public TextView altBeaconId;
-        @InjectView(R.id.manufacturer_id)
+        @BindView(R.id.manufacturer_id)
         public TextView altBeaconManufacturerId;
-        @InjectView(R.id.reference_rssi)
+        @BindView(R.id.reference_rssi)
         public TextView altBeaconReferenceRssi;
 
         BluetoothDeviceInfo btInfo;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.inject(this, itemView);
+            ButterKnife.bind(this, itemView);
         }
 
         @Override

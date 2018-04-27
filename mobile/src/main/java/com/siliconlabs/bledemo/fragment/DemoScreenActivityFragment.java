@@ -29,6 +29,7 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Optional;
+import butterknife.Unbinder;
 
 import static com.siliconlabs.bledemo.fragment.DemoItemProvider.ICONS;
 import static com.siliconlabs.bledemo.fragment.DemoItemProvider.LAUNCHERS;
@@ -43,6 +44,7 @@ public class DemoScreenActivityFragment extends Fragment {
     Dialog helpDialog;
     private boolean bleIsSupported = true;
     public static final int BlUETOOTH_SETTINGS_REQUEST_CODE = 100;
+    private Unbinder unbinder;
 
 
     private final BroadcastReceiver bluetoothAdapterStateChangeListener = new BroadcastReceiver() {
@@ -142,8 +144,8 @@ public class DemoScreenActivityFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_demo_items, container, false);
 
-        ButterKnife.inject(this, view);
-        ButterKnife.inject(demoItemProvider, view);
+        ButterKnife.bind(this, view);
+        ButterKnife.bind(demoItemProvider, view);
 
         ButterKnife.apply(demoItemProvider.demoItems, VISIBLE, true);
 
@@ -164,7 +166,7 @@ public class DemoScreenActivityFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.reset(this);
+        unbinder.unbind();
         getActivity().unregisterReceiver(bluetoothAdapterStateChangeListener);
     }
 

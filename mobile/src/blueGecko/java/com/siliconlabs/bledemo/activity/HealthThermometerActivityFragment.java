@@ -21,28 +21,28 @@ import com.siliconlabs.bledemo.views.TemperatureDisplay;
 import com.siliconlabs.bledemo.views.ThermoGraph;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class HealthThermometerActivityFragment extends Fragment {
     private TemperatureReading currentReading;
     private TemperatureReading.Type currentType;
 
-    @InjectView(R.id.thermometer_graph)
+    @BindView(R.id.thermometer_graph)
     ThermoGraph thermoGraph;
-    @InjectView(R.id.thermo_large_temperature)
+    @BindView(R.id.thermo_large_temperature)
     TemperatureDisplay largeTemperatureDisplay;
-    @InjectView(R.id.thermo_add_graph_button)
+    @BindView(R.id.thermo_add_graph_button)
     FloatingActionButton addToGraphButton;
-    @InjectView(R.id.thermo_clear_button)
+    @BindView(R.id.thermo_clear_button)
     FloatingActionButton clearButton;
-    @InjectView(R.id.thermo_type_value_text)
+    @BindView(R.id.thermo_type_value_text)
     TextView thermoTypeText;
-    @InjectView(R.id.thermo_large_time_text)
+    @BindView(R.id.thermo_large_time_text)
     TextView thermoTimeText;
-    @InjectView(R.id.type_switch)
+    @BindView(R.id.type_switch)
     SwitchCompat typeSwitch;
-    @InjectView(R.id.thermometer_device_name)
+    @BindView(R.id.thermometer_device_name)
     TextView deviceNameText;
 
     public HealthThermometerActivityFragment() {
@@ -52,7 +52,7 @@ public class HealthThermometerActivityFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_health_thermometer, container, false);
-        ButterKnife.inject(this, v);
+        ButterKnife.bind(this, v);
         setHasOptionsMenu(true);
         largeTemperatureDisplay.setFontFamily("sans-serif-thin", Typeface.NORMAL);
         thermoGraph.clear();

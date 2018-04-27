@@ -21,7 +21,7 @@ import com.siliconlabs.bledemo.BuildConfig;
 import com.siliconlabs.bledemo.R;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 
@@ -30,18 +30,18 @@ public class DemoScreenActivity extends BaseActivity {
     private Dialog hiddenDebugDialog;
     private boolean isBluetoothAdapterEnabled = true;
 
-    @InjectView(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @InjectView(R.id.help_button)
+    @BindView(R.id.help_button)
     Button helpButton;
-    @InjectView(R.id.splash)
+    @BindView(R.id.splash)
     View splash;
 
-    @InjectView(R.id.bluetooth_enable)
+    @BindView(R.id.bluetooth_enable)
     RelativeLayout bluetoothEnableBar;
-    @InjectView(R.id.bluetooth_enable_msg)
+    @BindView(R.id.bluetooth_enable_msg)
     TextView bluetoothEnableMsg;
-    @InjectView(R.id.bluetooth_enable_btn)
+    @BindView(R.id.bluetooth_enable_btn)
     TextView bluetoothEnableBtn;
 
     private final BroadcastReceiver bluetoothAdapterStateChangeListener = new BroadcastReceiver() {
@@ -80,7 +80,7 @@ public class DemoScreenActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_demo_screen);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         toolbar.setTitle(getResources().getString(R.string.title_activity_demo_screen));
         setSupportActionBar(toolbar);
