@@ -28,13 +28,27 @@ public enum GattService {
     BatteryService(0x0000180f, "org.bluetooth.service.battery_service", GattCharacteristic.BatteryLevel),
     HudDocking(0xdc03900d, "com.sensedriver.service.hud_docking", GattCharacteristic.DockStatus),
     OtaService(0x1d14d6ee, "com.silabs.service.ota",
-               GattCharacteristic.OtaControl,
-               GattCharacteristic.OtaData,
-               GattCharacteristic.FwVersion,
-               GattCharacteristic.OtaVersion),
+            GattCharacteristic.OtaControl,
+            GattCharacteristic.OtaData,
+            GattCharacteristic.FwVersion,
+            GattCharacteristic.OtaVersion),
     LightService("bae55b96-7d19-458d-970c-50613d801bc9", "custom.type",
-                 GattCharacteristic.Light,
-                 GattCharacteristic.TriggerSource);
+            GattCharacteristic.Light,
+            GattCharacteristic.TriggerSource),
+    XekeraService("acc0e0b7-9849-4a45-b4fc-bd6170a23f92", "custom.tpye",
+            GattCharacteristic.SessionInfo,
+            GattCharacteristic.Mode,
+            GattCharacteristic.SetTime,
+            GattCharacteristic.SetTimeToGetSession,
+            GattCharacteristic.ChargingStatus,
+            GattCharacteristic.VoltageLevelmV,
+            GattCharacteristic.Rssi,
+            GattCharacteristic.RefurbishDevice,
+            GattCharacteristic.AdcVal,
+            GattCharacteristic.FuelGaugeChipVersion,
+            GattCharacteristic.ResetControl,
+            GattCharacteristic.UpTime,
+            GattCharacteristic.VddMeasurement);
 
 
     private static final String FORMAT_STR = "%08x-0000-1000-8000-00805f9b34fb";

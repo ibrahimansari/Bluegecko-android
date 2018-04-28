@@ -127,6 +127,7 @@ public class DeviceServicesActivity extends AppCompatActivity {
     UUID ota_version = UUID.fromString("4cc07bcf-0868-4b32-9dad-ba4cc41e5316");
     UUID homekit_descriptor = UUID.fromString("dc46f0fe-81d2-4616-b5d9-6abdd796939a");
     UUID homekit_service = UUID.fromString("0000003e-0000-1000-8000-0026bb765291");
+    UUID xekera_servic = UUID.fromString("acc0e0b7-9849-4a45-b4fc-bd6170a23f92");
 
 
     private int previousFragmentId = 0;

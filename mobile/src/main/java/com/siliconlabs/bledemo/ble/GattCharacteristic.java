@@ -2,6 +2,7 @@ package com.siliconlabs.bledemo.ble;
 
 import android.bluetooth.BluetoothGattCharacteristic;
 
+import com.siliconlabs.bledemo.BuildConfig;
 import com.siliconlabs.bledemo.ble.values.ByteArrayValue;
 import com.siliconlabs.bledemo.ble.values.TemperatureValue;
 import com.siliconlabs.bledemo.ble.values.ValueFactory;
@@ -33,7 +34,21 @@ public enum GattCharacteristic {
     FwVersion(0x4f4a2368, "com.silabs.characteristic.fw_version", BluetoothGattCharacteristic.FORMAT_UINT8),
     OtaVersion(0x4cc07bcf, "com.silabs.characteristic.ota_version", BluetoothGattCharacteristic.FORMAT_UINT8),
     Light("76e137ac-b15f-49d7-9c4c-e278e6492ad9", "custom.type", BluetoothGattCharacteristic.FORMAT_UINT8),
-    TriggerSource("2f16ee52-0bfd-4597-85d4-a5141fdbae15", "custom.type", BluetoothGattCharacteristic.FORMAT_UINT8);
+    TriggerSource("2f16ee52-0bfd-4597-85d4-a5141fdbae15", "custom.type", BluetoothGattCharacteristic.FORMAT_UINT8),
+    SessionInfo("c3ef5651-4be4-4aa2-a39e-5fab5521c34d", "custom.type", BluetoothGattCharacteristic.FORMAT_UINT8),
+    Mode("ab4103c9-c2a4-4471-a6d1-5a26c15468b5", "custom.type", BluetoothGattCharacteristic.FORMAT_UINT8),
+    SetTime("46b8e42e-7b53-45b7-a5bc-7c2f0a4ab62d", "custom.type", BluetoothGattCharacteristic.FORMAT_UINT8),
+    SetTimeToGetSession("43de735c-9f95-4956-8c03-3579a895708d", "custom.type", BluetoothGattCharacteristic.FORMAT_UINT8),
+    ChargingStatus("3df41500-a0a7-49ff-b5d5-9a40380c315c", "custom.type", BluetoothGattCharacteristic.FORMAT_UINT8),
+    VoltageLevelmV("cf3f3751-9a17-4b2b-898f-37dfa93580bf", "custom.type", BluetoothGattCharacteristic.FORMAT_UINT8),
+    Rssi("67502098-7bbe-4288-824a-e9b6f72f72e4", "custom.type", BluetoothGattCharacteristic.FORMAT_UINT8),
+    RefurbishDevice("5c481ee2-6285-42a9-a268-267789a65a7e", "custom.type", BluetoothGattCharacteristic.FORMAT_UINT8),
+    AdcVal("e53a4e01-f6e3-4914-b8a8-5135ad2f4d07", "custom.type", BluetoothGattCharacteristic.FORMAT_UINT8),
+    FuelGaugeChipVersion("4f54c65e-45df-4602-a9ae-978996b3f5b0", "custom.type", BluetoothGattCharacteristic.FORMAT_UINT8),
+    ResetControl("9905f13f-f5cf-4d6d-b11d-57be0c1335d3", "custom.type", BluetoothGattCharacteristic.FORMAT_UINT8),
+    UpTime("105353d1-5326-4fa1-b9ca-6051ee72f466", "custom.type", BluetoothGattCharacteristic.FORMAT_UINT8),
+    VddMeasurement("0ca772e4-3f85-485d-b5ec-00887412a4c9", "custom.type", BluetoothGattCharacteristic.FORMAT_UINT8);
+
 
     private static final String FORMAT_STR = "%08x-0000-1000-8000-00805f9b34fb";
     /**
