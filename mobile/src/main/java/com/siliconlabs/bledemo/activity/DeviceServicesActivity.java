@@ -1209,6 +1209,7 @@ public class DeviceServicesActivity extends AppCompatActivity {
     }
 
     /**INITIATES SERVICES VIEWS************************************************************/
+    // TODO: See if this is what updates the Xekera Service Name
     private void initServicesViews() {
         // iterate through all of the services for the device, inflate and add views to the scrollview
         ArrayList<BluetoothGattService> services = (ArrayList<BluetoothGattService>) bluetoothGatt.getServices(); //service.getConnectedGatt().getServices();
@@ -1249,6 +1250,7 @@ public class DeviceServicesActivity extends AppCompatActivity {
                 if (characteristicUuid.equals(ota_data.toString())) characteristicName = "OTA Data";
                 if (characteristicUuid.equals(fw_version.toString())) characteristicName = "FW Version";
                 if (characteristicUuid.equals(ota_version.toString())) characteristicName = "OTA Version";
+                if (characteristicUuid.equals(xekera_servic.toString())) characteristicName = "Xekera Service";
 
                 // inflate/create ui elements
                 LayoutInflater layoutInflater = LayoutInflater.from(this);
